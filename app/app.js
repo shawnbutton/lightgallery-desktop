@@ -118,7 +118,8 @@ var defaults = {
 };
 
 // Write settings to config file
-fs.readFile(app.getPath('userData') + '/lg-config.json', function(err, data) {
+let config_file = app.getPath('userData') + '/lg-config.json';
+fs.readFile(config_file, function(err, data) {
     if (err) {
         fs.writeFile(app.getPath('userData') + '/lg-config.json', JSON.stringify(defaults), function(err) {
             if (err) throw err;
